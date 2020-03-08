@@ -37,6 +37,8 @@ class Network(object):
             for mini_batch in mini_batches:
                 self.update_mini_batch(mini_batch, eta)
             if test_data:
+                # if (j == epochs-1):
+                #     our_code()
                 print ("Epoch {}: {} / {}".format(
                     j, self.evaluate(test_data), n_test))
             else:
@@ -84,6 +86,13 @@ class Network(object):
         test_results = [(np.argmax(self.feedforward(x)), y)
                         for (x, y) in test_data]
         return sum(int(x == y) for (x, y) in test_results)
+	
+	def evaluate_own(self, test_pic):
+		# takes input from user and classify it using the nn
+		test_result = np.argmax(self.feedforward(test_data))
+		return test_result
+
+
 
     def cost_derivative(self, output_activations, y):
         """Return the vector of partial derivatives \partial C_x /

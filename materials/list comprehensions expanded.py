@@ -47,3 +47,6 @@ def theInitFunc(sizes):
 # expand 
 training_inputs = [np.reshape(x, (784, 1)) for x in tr_d[0]]
 [np.reshape(x, (784, 1)) for x in ["784 long array -- mnnist pic"]]
+
+for k in xrange(0, n, mini_batch_size)
+# what was that third argument 
